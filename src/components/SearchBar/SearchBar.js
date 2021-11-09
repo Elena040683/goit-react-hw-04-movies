@@ -1,0 +1,46 @@
+import { useHistory, useLocation } from 'react-router-dom';
+import { toast } from 'react-toastify';
+import PropTypes from 'prop-types';
+
+import 'react-toastify/dist/ReactToastify.css';
+import styles from './SearchBar.module.css';
+
+export default function Searchbar({ onSubmit, query, changeQuery }) {
+  const history = useHistory();
+  const location = useLocation();
+
+  const handleNameChange = e => {
+    changeQuery(e.currentTarget.value);
+  };
+
+  const handleSubmit = e => {
+    e.preventDefault();
+    if (query.trim() === '') {
+      return toast.error('Please enter some value');
+    }
+    history.push({ ...location, search: `query=${query}` });
+    onSubmit(query);
+  };
+
+  return (
+    <form className={styles.searchForm} onSubmit={handleSubmit}>
+      <button type="submit" className={styles.searchFormButton}>
+        <span className={styles.searchFormButtonLabel}>Search</span>
+      </button>
+
+      <input
+        className={styles.searchFormInput}
+        type="text"
+        autoComplete="off"
+        autoFocus
+        placeholder="Search movies ..."
+        value={query}
+        onChange={handleNameChange}
+      />
+    </form>
+  );
+}
+
+Searchbar.propTypes = {
+  onSubmit: PropTypes.func,
+};

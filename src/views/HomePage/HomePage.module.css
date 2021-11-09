@@ -1,0 +1,9 @@
+.title {
+  display: block;
+  margin-top: 15px;
+  margin-bottom: 30px;
+  font-size: 40px;
+  letter-spacing: 0.14em;
+  color: rgb(12, 11, 11);
+  text-align: center;
+}

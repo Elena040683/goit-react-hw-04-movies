@@ -9,23 +9,23 @@ async function fetchData(url = '', config = {}) {
 }
 
 export function fetchTrendingMovies() {
-  fetchData(`${BASE_URL}/trending/movie/day?api_key=${KEY}`);
+  return fetchData(`${BASE_URL}/trending/movie/day?api_key=${KEY}`);
 }
 
 export function searchMoviesByQuery(query) {
-  fetchData(
-    `${BASE_URL}/search/movie?api_key=${KEY}&query=${query}&include_adult=false`
+  return fetchData(
+    `${BASE_URL}/search/movie?api_key=${KEY}&query=${query}&language=en-US&include_adult=false`
   );
 }
 
 export function getInfoAboutMovie(movieId) {
-  fetchData(`${BASE_URL}/movie/${movieId}?api_key=${KEY}`);
+  return fetchData(`${BASE_URL}/movie/${movieId}?api_key=${KEY}`);
 }
 
 export function getInfoAboutCast(movieId) {
-  fetchData(`${BASE_URL}/movie/${movieId}/credits?api_key=${KEY}`);
+  return fetchData(`${BASE_URL}/movie/${movieId}/credits?api_key=${KEY}`);
 }
 
 export function getUsersReviews(movieId) {
-  fetchData(`${BASE_URL}/movie/${movieId}/reviews?api_key=${KEY}`);
+  return fetchData(`${BASE_URL}/movie/${movieId}/reviews?api_key=${KEY}`);
 }
