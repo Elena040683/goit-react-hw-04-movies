@@ -1,3 +1,7 @@
+.navigation {
+  background-color: aqua;
+}
+
 .link {
   display: inline-block;
   text-decoration: none;

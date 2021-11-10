@@ -3,7 +3,7 @@ import { NavLink } from 'react-router-dom';
 
 export default function Navigation() {
   return (
-    <nav>
+    <nav className={styles.navigation}>
       <ul className={styles.list}>
         <li>
           <NavLink

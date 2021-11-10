@@ -58,7 +58,6 @@ export default function MoviesDetailsPage() {
       </div>
       <hr />
 
-      <h3 className={styles.subTitle}>Additional information</h3>
       <ul className={styles.additional}>
         <li>
           <Link
