@@ -29,11 +29,11 @@ function App() {
 
       <Suspense fallback={<Loader />}>
         <Switch>
-          <Route exact path="/">
+          <Route path="/" exact>
             <HomePage />
           </Route>
 
-          <Route exact path="/movies">
+          <Route path="/movies" exact>
             <MoviesPage />
           </Route>
 
@@ -41,9 +41,9 @@ function App() {
             <MoviesDetailsPage />
           </Route>
 
-          <Route path="/notFoundView">
+          {/* <Route path="/notFoundView">
             <NotFoundView />
-          </Route>
+          </Route> */}
         </Switch>
       </Suspense>
     </div>
