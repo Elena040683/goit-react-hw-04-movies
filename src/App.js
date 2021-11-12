@@ -6,6 +6,7 @@ import Navigation from './components/Navigation/Navigation';
 // import { MoviesPage } from './views/MoviesPage/MoviesPage';
 // import { MoviesDetailsPage } from './views/MoviesDetailsPage/MoviesDetailsPage';
 import NotFoundView from './views/NotFoundView/NotFoundView';
+import Loader from 'react-loader-spinner';
 
 const HomePage = lazy(() =>
   import('./views/HomePage/HomePage' /* webpackChunkName: "home-page" */)
@@ -26,7 +27,7 @@ function App() {
     <div className={styles.App}>
       <Navigation />
 
-      <Suspense fallback={<div>Loading ...</div>}>
+      <Suspense fallback={<Loader />}>
         <Switch>
           <Route exact path="/">
             <HomePage />
@@ -40,7 +41,7 @@ function App() {
             <MoviesDetailsPage />
           </Route>
 
-          <Route>
+          <Route path="/notFoundView">
             <NotFoundView />
           </Route>
         </Switch>
