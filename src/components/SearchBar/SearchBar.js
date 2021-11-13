@@ -24,10 +24,6 @@ export default function Searchbar({ onSubmit, query, changeQuery }) {
 
   return (
     <form className={styles.searchForm} onSubmit={handleSubmit}>
-      <button type="submit" className={styles.searchFormButton}>
-        <span className={styles.searchFormButtonLabel}>Search</span>
-      </button>
-
       <input
         className={styles.searchFormInput}
         type="text"

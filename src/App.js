@@ -5,7 +5,7 @@ import Navigation from './components/Navigation/Navigation';
 // import { HomePage } from './views/HomePage/HomePage';
 // import { MoviesPage } from './views/MoviesPage/MoviesPage';
 // import { MoviesDetailsPage } from './views/MoviesDetailsPage/MoviesDetailsPage';
-import NotFoundView from './views/NotFoundView/NotFoundView';
+
 import Loader from 'react-loader-spinner';
 
 const HomePage = lazy(() =>
@@ -40,10 +40,6 @@ function App() {
           <Route path="/movies/:movieId">
             <MoviesDetailsPage />
           </Route>
-
-          {/* <Route path="/notFoundView">
-            <NotFoundView />
-          </Route> */}
         </Switch>
       </Suspense>
     </div>
